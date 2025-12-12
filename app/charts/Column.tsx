@@ -1,7 +1,5 @@
 "use client";
 import { Column } from "@ant-design/plots";
-import React from "react";
-import { createRoot } from "react-dom/client";
 
 const DemoColumn = () => {
   const config = {
@@ -19,10 +17,5 @@ const DemoColumn = () => {
   };
   return <Column {...config} />;
 };
-
-const container = document.getElementById("container");
-if (container) {
-  createRoot(container).render(<DemoColumn />);
-}
 
 export default DemoColumn;

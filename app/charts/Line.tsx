@@ -1,8 +1,6 @@
 "use client";
 
 import { Line } from "@ant-design/plots";
-import React from "react";
-import { createRoot } from "react-dom/client";
 
 const DemoLine = () => {
   const data = [
@@ -35,10 +33,5 @@ const DemoLine = () => {
   };
   return <Line {...config} />;
 };
-
-const container = document.getElementById("container");
-if (container) {
-  createRoot(container).render(<DemoLine />);
-}
 
 export default DemoLine;

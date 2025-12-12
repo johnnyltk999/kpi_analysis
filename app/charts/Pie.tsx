@@ -1,7 +1,5 @@
 "use client";
 import { Pie } from "@ant-design/plots";
-import React from "react";
-import { createRoot } from "react-dom/client";
 
 const DemoPie = () => {
   const config = {
@@ -27,10 +25,5 @@ const DemoPie = () => {
   };
   return <Pie {...config} />;
 };
-
-const container = document.getElementById("container");
-if (container) {
-  createRoot(container).render(<DemoPie />);
-}
 
 export default DemoPie;

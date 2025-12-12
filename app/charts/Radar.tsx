@@ -1,7 +1,5 @@
 "use client";
 import { Radar } from "@ant-design/plots";
-import React from "react";
-import { createRoot } from "react-dom/client";
 
 const data = [
   { item: "Design", type: "a", score: 70 },
@@ -59,10 +57,5 @@ const DemoRadar = () => {
   };
   return <Radar {...config} />;
 };
-
-const container = document.getElementById("container");
-if (container) {
-  createRoot(container).render(<DemoRadar />);
-}
 
 export default DemoRadar;
