@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Sans_Lao } from "next/font/google";
 import "./globals.css";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import PageLoading from "./components/PageLoading";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
