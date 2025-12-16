@@ -81,7 +81,7 @@ const App: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Sider trigger={null} collapsible collapsed={collapsed} width={210}>
+      <Sider trigger={null} collapsible collapsed={collapsed} width={220}>
         <div className="flex items-center gap-3 px-4 py-4 relative">
           <Image
             src={LOGO}
