@@ -8,6 +8,7 @@ import Form from "./Form/page";
 import Modal from "../../components/Modal";
 import type { TableProps } from "antd";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import { withAuth } from "../../components/withAuth";
 
 interface DataType {
   key: string;
@@ -158,4 +159,4 @@ function JobRotation() {
   );
 }
 
-export default JobRotation;
+export default withAuth(JobRotation, { allowedRoles: ["admin"] });

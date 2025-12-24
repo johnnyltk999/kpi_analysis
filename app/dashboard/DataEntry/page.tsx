@@ -20,6 +20,7 @@ import {
   Tag,
 } from "antd";
 import type { UploadProps } from "antd";
+import { withAuth } from "@/app/components/withAuth";
 
 const { TextArea } = Input;
 const { Dragger } = Upload;
@@ -170,4 +171,4 @@ function DataEntry() {
   );
 }
 
-export default DataEntry;
+export default withAuth(DataEntry, { allowedRoles: ["admin", "editor"] });

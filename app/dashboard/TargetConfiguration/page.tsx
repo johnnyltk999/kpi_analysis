@@ -7,6 +7,7 @@ import Modal from "../../components/Modal";
 import Form from "./Form/page";
 import type { TableProps } from "antd";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import { withAuth } from "@/app/components/withAuth";
 
 interface DataType {
   key: string;
@@ -168,4 +169,4 @@ const Target = () => {
   );
 };
 
-export default Target;
+export default withAuth(Target, { allowedRoles: ["admin"] });

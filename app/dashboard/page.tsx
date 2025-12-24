@@ -22,6 +22,7 @@ function Dashboard() {
   const [loadings, setLoadings] = useState<boolean[]>([]);
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const [lastRefreshed, setLastRefreshed] = useState<string>("");
 
   const showModal = () => setOpen(true);
 
@@ -35,6 +36,7 @@ function Dashboard() {
       updated[index] = true;
       return updated;
     });
+    setLastRefreshed(getCurrentTime());
 
     router.refresh();
 
@@ -45,6 +47,15 @@ function Dashboard() {
         return updated;
       });
     }, 1000);
+  };
+
+  const getCurrentTime = () => {
+    const now = new Date();
+    return now.toLocaleString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    });
   };
 
   return (
@@ -92,7 +103,10 @@ function Dashboard() {
       </div>
 
       <div className="m-4 flex">
-        Data Source: SQL View Consolidation | Last Refreshed: Today 10:30 AM{" "}
+        Data Source: SQL View Consolidation | Last Refreshed:{" "}
+        <span className="ml-1 font-medium">
+          {lastRefreshed ? `Today ${lastRefreshed}` : "-"}
+        </span>
         <div className="ml-5 flex justify-end flex-1">
           <Button
             color="cyan"
